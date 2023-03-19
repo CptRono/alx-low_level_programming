@@ -12,10 +12,11 @@ int main(void)
  * make an array of the string with the type char so that each character has
  * a length of 1. the length of the array is the number of characters in the
  * string
+ * minus 1 from length to subtract the newline char (slash n) which is 1 char
  */
 	char string[] = "and that piece of art is useful\" - Dora Korpar, 2015\
-		-10-19\n";
-	int stringLength = sizeof(string);
+-10-19\n";
+	int stringLength = sizeof(string) - 1;
 
 	write(2, string, stringLength);
 	return (1);
