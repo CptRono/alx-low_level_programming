@@ -18,7 +18,10 @@ void times_table(void)
 			printf("%d", c);
 			if (a == 9)
 				break;
-			printf("  ");
+			if (c < 10)
+				printf("  ");
+			else
+				printf(" ");
 		}
 		putchar('\n');
 	}
