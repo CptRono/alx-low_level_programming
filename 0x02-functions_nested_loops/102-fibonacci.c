@@ -1,13 +1,12 @@
 #include "main.h"
 #include <stdio.h>
+#include <unistd.h>
 /**
  * main - prints fibonnacci sequence
  * @a - counts up to 50th term
  * @b - first term
  * @c - 2nd term
  * @d - sum of 1st and 2nd
- *
- * Return: 0 on success
  */
 int main(void)
 {
@@ -18,14 +17,15 @@ int main(void)
 
 	b = 0;
 	c = 1;
-	for (a = 0; a < 50; a++)
+	for (a = 0; a <= 50; a++)
 	{
 		d = c + b;
-		if (a == 0)
-		printf(", %ld", d);
+
+		printf("%ld, ", d);
+		if (a == 50)
+			printf("%ld", c);
 		b = c;
 		c = d;
 	}
-	printf("\n");
 	return (0);
 }
