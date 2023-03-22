@@ -7,6 +7,8 @@
  * @b - first term
  * @c - 2nd term
  * @d - sum of 1st and 2nd
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
@@ -17,13 +19,14 @@ int main(void)
 
 	b = 0;
 	c = 1;
-	for (a = 0; a <= 50; a++)
+
+	for (a = 0; a < 50; a++)
 	{
 		d = c + b;
-
-		printf("%ld, ", d);
-		if (a == 50)
-			printf("%ld", c);
+		if (a == 49)
+			printf("%ld", d);
+		else
+			printf("%ld, ", d);
 		b = c;
 		c = d;
 	}
