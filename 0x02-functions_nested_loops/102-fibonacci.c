@@ -20,7 +20,6 @@ int main(void)
 	{
 		d = c + b;
 		if (a == 0)
-			printf("%ld, %ld", b, c);
 		printf(", %ld", d);
 		b = c;
 		c = d;
