@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * main - prints sum of multiples of 3 & 5
  * Return: 0 on success
@@ -17,6 +16,6 @@ int main(void)
 		else
 			continue;
 	}
-	printf("%d", b);
+	printf("%d\n", b);
 	return (0);
 }
