@@ -6,6 +6,8 @@
  * @b - first term
  * @c - 2nd term
  * @d - sum of 1st and 2nd
+ *
+ * Return: 0 on success
  */
 int main(void)
 {
