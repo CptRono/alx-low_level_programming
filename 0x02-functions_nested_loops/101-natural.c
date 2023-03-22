@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <unistd.h>
 /**
  * main - prints sum of multiples of 3 & 5
  * Return: 0 on success
