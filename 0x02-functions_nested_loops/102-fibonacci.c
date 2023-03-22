@@ -9,10 +9,10 @@
  */
 int main(void)
 {
-	long long int a;
-	long long int b;
-	long long int c;
-	long long int d;
+	long int a;
+	long int b;
+	long int c;
+	long int d;
 
 	b = 0;
 	c = 1;
@@ -20,8 +20,8 @@ int main(void)
 	{
 		d = c + b;
 		if (a == 0)
-			printf("%lld, %lld", b, c);
-		printf(", %lld", d);
+			printf("%ld, %ld", b, c);
+		printf(", %ld", d);
 		b = c;
 		c = d;
 	}
