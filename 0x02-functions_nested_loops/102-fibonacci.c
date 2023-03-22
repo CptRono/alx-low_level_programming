@@ -30,5 +30,6 @@ int main(void)
 		b = c;
 		c = d;
 	}
+	printf("\n");
 	return (0);
 }
