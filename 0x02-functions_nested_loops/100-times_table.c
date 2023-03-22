@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdio.h>
+#include <unistd.h>
 /**
- * times_table - prints the 9 times table, starting with 0.
+ * print_times_table - prints the n times table, starting with 0.
  * @n: number whose n table is to be genareated
  */
 void print_times_table(int n)
