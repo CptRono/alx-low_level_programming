@@ -12,12 +12,12 @@ void times_table(void)
 
 	for (b = 0; b < 10; b++)
 	{
-		for (a = 0; a < 10; a++)
+		for (a = 0; a < 11; a++)
 		{
 			int c;
 
 			c = b * a;
-			if (a == 9)
+			if (a == 10)
 				break;
 			if (c == 0 && (b != 0 || a == 0))
 				printf("%d", c);
@@ -28,4 +28,9 @@ void times_table(void)
 		}
 		putchar('\n');
 	}
+}
+int main(void)
+{
+	times_table();
+	return (0);
 }
