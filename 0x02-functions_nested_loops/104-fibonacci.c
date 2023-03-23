@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	long int a;
-	long int b = 0;
-	long int c = 1;
-	long int d = c;
+	unsigned long int a;
+	unsigned long int b = 0;
+	unsigned long int c = 1;
+	unsigned long int d = c;
 
 	for (a = 1; a <= 98; a++)
 	{
@@ -19,9 +19,9 @@ int main(void)
 		b = c;
 		c = d;
 		if (a == 98)
-			printf("%ld", d);
+			printf("%lu", d);
 		else
-			printf("%ld, ", d);
+			printf("%lu, ", d);
 	}
 	printf("\n");
 	return (0);
