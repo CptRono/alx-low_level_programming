@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_numbers - prints 1-9 except 2,4
+ * print_most_numbers - prints 1-9 except 2,4
  */
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	char i = '0';
 
