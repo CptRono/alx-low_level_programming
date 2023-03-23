@@ -4,6 +4,7 @@
 /**
  * times_table - prints the 9 times table, starting with 0.
  */
+void times_table(void);
 void times_table(void)
 {
 	int a;
@@ -16,13 +17,14 @@ void times_table(void)
 			int c;
 
 			c = b * a;
-			printf("%d", c);
 			if (a == 9)
 				break;
-			if (c < 9)
-				printf(",  ");
+			if (c == 0 && (b != 0 || a == 0))
+				printf("%d", c);
+			else if (c <= 9)
+				printf(",  %d", c);
 			else
-				printf(", ");
+				printf(", %d", c);
 		}
 		putchar('\n');
 	}
