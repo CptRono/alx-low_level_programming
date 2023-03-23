@@ -1,3 +1,4 @@
+#include <stdio.main>
 #include "main.h"
 /**
  * print_numbers - prints 1-9 except 2,4
