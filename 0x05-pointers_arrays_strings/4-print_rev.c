@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "main.h"
 /**
  * print_rev - reverses strings
  * @s: contains array of chars to be reversed
