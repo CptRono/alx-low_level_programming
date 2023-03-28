@@ -7,8 +7,8 @@
  */
 void rev_string(char *s)
 {
-	int a;
 	int temp;
+	int j;
 
 	/*find length of string*/
 	int i = 0;
@@ -19,7 +19,7 @@ void rev_string(char *s)
 	}
 	/*swap characters on opposite ends of the half mark*/
 
-	for (int j = 0; j < i / 2; j++)
+	for (j = 0; j < i / 2; j++)
 	{
 		temp = s[j];
 		s[j] = s[i - j - 1];
