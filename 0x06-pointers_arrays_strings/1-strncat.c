@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include "main.h"
 /**
  * _strcat - appends the src string to the dest string, overwriting the
