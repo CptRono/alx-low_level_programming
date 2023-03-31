@@ -14,6 +14,7 @@ char *_strcat(char *dest, char *src)
 	int i;
 	int j;
 
+	i = 0;
 	/*iterate a pointer till it gets to \\0 in the 1st string*/
 	while (dest[i] != '\0')
 	{
