@@ -3,13 +3,17 @@
 /**
  * leet - encodes a string into 1337/leet
  * @str: the string to be encoded6-cap_string.c
+ * Return: returns the encoded string
  */
 char *leet(char *str)
 {
 	int i;
 	int j;
 
-	/*create 2 strings with the chars that leet encodes. One in caps and other lower*/
+	/**
+	 * create 2 strings with the chars that leet encodes. One in caps and
+	 * other lower
+	 */
 	char letter[] = "aeotl";
 	char letter1[] = "AEOTL";
 	/*create string with the chars that replace the above in leet encoding*/

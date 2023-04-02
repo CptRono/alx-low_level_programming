@@ -3,6 +3,7 @@
 /**
  * cap_string - capitalises 1st letter of a word
  * @str: the string that contains words to be capitalised
+ * Return: returns the modified string
  */
 char *cap_string(char *str)
 {
@@ -11,8 +12,15 @@ char *cap_string(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 
-		/*Separators of words: space, tabulation, new line, ,, ;, ., !, ?, ", (, ), {, }*/
-		if (str[i] == ' ' || str[i] == 9 || str[i] == 10 || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
+		/**
+		 * Separators of words: space, tabulation, new line,
+		 * ,, ;, ., !, ?, ", (, ), {, }
+		 */
+		if (str[i] == ' ' || str[i] == 9 || str[i] == 10 ||
+		str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+		str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+		str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+		str[i] == '}')
 		{
 			/*when delimitor found, check if next char is a small LETTER. Capitalise*/
 			if (str[i + 1] > 96 && str[i + 1] < 123)

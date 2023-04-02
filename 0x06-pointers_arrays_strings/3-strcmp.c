@@ -4,6 +4,7 @@
  * _strcmp - compares 2 strings. works exactly like strcmp
  * @s1: 1st string
  * @s2: 2nd string
+ * Return: returns 15 if s1 is greater, -15 if s2 is greater and 0 if equal
  */
 int _strcmp(char *s1, char *s2)
 {
