@@ -8,7 +8,7 @@
  * @src: pointer to 2nd string
  * @n: the number of chars to be copied from src
  * Return: returns pointer to resulting string dest
-*/
+ */
 char *_strncat(char *dest, char *src, int n)
 {
 	int i;
@@ -20,10 +20,10 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		i++;
 	}
-/*get value i of last iteration*/
-/*use 2nd pointer to get value of 1st index of 2nd string till src(n)*/
-/*assign this value to the n index of 1st string*/
-/*repeat above while increamenting pointer 1 and 2*/
+	/*get value i of last iteration*/
+	/*use 2nd pointer to get value of 1st index of 2nd string till src(n)*/
+	/*assign this value to the n index of 1st string*/
+	/*repeat above while increamenting pointer 1 and 2*/
 	for (j = 0; j < n && src[j] != '\0'; j++)
 	{
 		dest[i] = src[j];
