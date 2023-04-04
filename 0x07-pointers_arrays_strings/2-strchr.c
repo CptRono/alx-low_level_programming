@@ -18,6 +18,16 @@ char *_strchr(char *s, char c)
 			return (&s[i]);
 		}
 	}
-	return (&s[i]);
+	if (c == '\0')
+		return (&s[i]);
 	return (NULL);
+}
+int main(void)
+{
+	char *s = "First, solve the problem. Then, write the code.";
+	char *f;
+
+	f = _strchr(s, '\0');
+	printf("%s\n", (f == NULL ? "nil" : f));
+	return (0);
 }
