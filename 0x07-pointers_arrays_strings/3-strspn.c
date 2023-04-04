@@ -4,7 +4,8 @@
  * _strspn -  function that gets the length of a prefix substring.
  * @s: pointer to string to be checked
  * @accept: string with acceptable chars
-*/
+ * Return: returns the number of initial matching chars
+ */
 unsigned int _strspn(char *s, char *accept)
 {
 	int a;
@@ -36,6 +37,6 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 	}
-	end:
+end:
 	return (sum);
 }
