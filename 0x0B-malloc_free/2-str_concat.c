@@ -1,7 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * str_concat - concatenates two strings.
+ * @s1: 1st string
+ * @s2: 2nd string
+ * Return: pointer to a newly allocated space in memory which contains the
+ * contents of s1, followed by the contents of s2
+*/
 char *str_concat(char *s1, char *s2)
 {
 	int i;
@@ -22,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 			i++;
 		}
 	}
-	if (s2 = NULL)
+	if (s2 == NULL)
 	{
 		s2 = (char *)malloc(2 * sizeof(char));
 		j = 0;
@@ -39,21 +45,7 @@ char *str_concat(char *s1, char *s2)
 	for (k = 0; k <= i; k++)
 		p[k] = s1[k];
 	for (k = 0; k <= j; k++)
-		p[k + i + 1] = s2[k];
-	p[sum] = '\0';
+		p[k + i] = s2[k];
+	p[sum - 1] = '\0';
 	return (p);
-}
-int main(void)
-{
-    char *s;
-
-    s = str_concat("Betty ", "Holbertonschool");
-    if (s == NULL)
-    {
-	printf("failed\n");
-	return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
 }
