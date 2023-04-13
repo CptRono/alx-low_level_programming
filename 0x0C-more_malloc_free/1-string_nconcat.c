@@ -11,43 +11,31 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int a, b, c;
+	unsigned int a, b, c, len;
 	char *p;
 
 	if (s1 == NULL)
-	{
-		s1[0] = '\0';
-		a = 0;
-	}
+		s1 = "";
 	if (s2 == NULL)
-	{
-		s2[0] = '\0';
-		b = 0;
-	}
+		s2 = "";
 	/*find lengths of s1 & s2 without null terminators*/
-	for (a = 0; s1[a] != '\0';)
-		a++;
-	for (b = 0; s2[b] != '\0';)
-		b++;
-	/*allocate mem for 1st string*/
-	p = malloc(a * sizeof(int));
+	for (a = 0; s1[a] != '\0'; a++)
+		;
+	for (b = 0; s2[b] != '\0'; b++)
+		;
+	/*find sum of resulting string*/
+	len = (a + (b < n ? b : n));
+	/*allocate mem for resulting string including \0 */
+	p = malloc((len + 1) * sizeof(char));
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 	for (c = 0; s1[c] != '\0'; c++)
 		p[c] = s1[c];
-	/*allocate mem for concat string. add 1 for null terminator*/
-	if (n <= b)
-	{
-		p = realloc(p, (a + n + 1) * sizeof(char));
-		for (a = 0; a < n; a++, c++)
-			p[c] = s2[a];
-	}
-	else if (n > b)
-	{
-		p = realloc(p, (a + b + 1) * sizeof(char));
-		for (a = 0; s2[a] != '\0'; a++, c++)
-			p[c] = s2[a];
-	}
+	for (a = 0; s2[a] != '\0' && a < n; a++, c++)
+		p[c] = s2[a];
 	p[c] = '\0';
 	return (p);
 }
