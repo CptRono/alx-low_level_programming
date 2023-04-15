@@ -5,10 +5,11 @@
  * @argc: number of args
  * @argv: arguments passed
  * Return: 0 on success. 1 if args passed are not 2
-*/
+ */
 int main(int argc, char *argv[])
 {
 	int a, b, mul;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -18,5 +19,5 @@ int main(int argc, char *argv[])
 	b = atoi(argv[2]);
 	mul = a * b;
 	printf("%d\n", mul);
-	return(0);
+	return (0);
 }
