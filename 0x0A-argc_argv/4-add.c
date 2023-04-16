@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (argc == 1)
 	{
 		printf("0\n");
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	for (i = 1; i < argc; i++)
 	{
@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 		if (*endptr != '\0')
 		{
 			printf("Error\n");
-			exit(1);
+			exit(EXIT_FAILURE);
 		}
 		sum = sum + (int)num;
 	}
 	printf("%d\n", sum);
-	return (1);
+	return (EXIT_SUCCESS);
 }
