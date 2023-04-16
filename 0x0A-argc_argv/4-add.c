@@ -34,13 +34,12 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (1);
 	}
-	/*check if both arguments are integers*/
-	for (i = 1; i <= 3; i++)
+	for (i = 1; i < argc; i++)
 	{
-		if (is_int(argv[i]) != 1)
+		if (atoi(argv[i]) == 0 && argv[i][0] != 0)
 		{
 			printf("Error\n");
-			exit(1);
+			return (1);
 		}
 		sum = sum + atoi(argv[i]);
 	}
