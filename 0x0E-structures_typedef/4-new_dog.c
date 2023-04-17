@@ -14,18 +14,19 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/*create pointer to the new dog to be returned & allocate mem for it*/
 	dog_t *new;
 
-	new = malloc(sizeof(new));
+	new = malloc(sizeof(dog_t));
 	/*allocate memory for each member of new*/
 	new->name = malloc(strlen(name) + 1);
 	if (new->name == NULL)
 	{
-		free(new->name);
+		free(new);
 		return (NULL);
 	}
 	new->owner = malloc(strlen(owner) + 1);
-	if (new->name == NULL)
+	if (new->owner == NULL)
 	{
-		free(new->owner);
+		free(new);
+		free(name);
 		return (NULL);
 	}
 	/* copy each string to each of new's member */
