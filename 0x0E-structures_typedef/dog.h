@@ -1,3 +1,5 @@
+#ifndef MAIN_H
+#define MAIN_H
 #include "main.h"
 #ifndef DOG_H
 #define DOG_H
@@ -7,12 +9,12 @@
  * @age: age of dog
  * @owner: owner
 */
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
-typedef struct dog dog_t;
+}dog_t;
 
+#endif
 #endif
