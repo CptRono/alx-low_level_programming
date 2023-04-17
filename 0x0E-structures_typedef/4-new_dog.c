@@ -17,13 +17,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new = malloc(sizeof(new));
 	/*allocate memory for each member of new*/
 	new->name = malloc(strlen(name) + 1);
-	if (name == NULL)
+	if (new->name == NULL)
 	{
 		free(new->name);
 		return (NULL);
 	}
-	new->owner = malloc(sizeof(strlen(owner) + 1));
-	if (name == NULL)
+	new->owner = malloc(strlen(owner) + 1);
+	if (new->name == NULL)
 	{
 		free(new->owner);
 		return (NULL);
