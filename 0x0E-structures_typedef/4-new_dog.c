@@ -19,13 +19,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new->name = malloc(strlen(name) + 1);
 	if (name == NULL)
 	{
-		free(name);
+		free(new->name);
 		return (NULL);
 	}
 	new->owner = malloc(sizeof(strlen(owner) + 1));
 	if (name == NULL)
 	{
-		free(name);
+		free(new->owner);
 		return (NULL);
 	}
 	/* copy each string to each of new's member */
