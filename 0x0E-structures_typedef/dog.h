@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef DOG_H
+#define DOG_H
 /**
  * struct dog - structure with name age and owner details of a dog
  * @name: string of dog's name
