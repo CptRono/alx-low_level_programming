@@ -4,10 +4,13 @@
 /**
  * free_dog - func that frees dog
  * @d: pointer to dog to be freed
-*/
+ */
 void free_dog(dog_t *d)
 {
-	free(d->name);
-	free(d->owner);
-	free(d);
+	if (d != NULL)
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
