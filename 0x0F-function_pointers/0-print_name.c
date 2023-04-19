@@ -6,9 +6,9 @@
  * specified in the passed function
  * @name: the string to be printed by the passed function
  * @f: pointer to the function passed as an argument
-*/
+ */
 void print_name(char *name, void (*f)(char *))
 {
-    if (f != NULL && name != NULL)
-	    f(name);
+	if (f != NULL && name != NULL)
+		f(name);
 }
