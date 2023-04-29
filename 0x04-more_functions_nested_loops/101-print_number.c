@@ -15,9 +15,9 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
-	if (n == 0)
+	if (n < 10)
 	{
-		_putchar('0');
+		_putchar(n + '0');
 		return;
 	}
 	for (i = 10; (n / i) > 9; i = i * 10)
