@@ -11,11 +11,10 @@ size_t list_len(const list_t *h)
 {
 	int count;
 
-	for (count = 0; h->next != NULL; count++)
+	for (count = 0; h != NULL; count++)
 	{
 		/*assign h the value of the next node*/
 		h = h->next;
-		count++;
 	}
 	return (count);
 }
