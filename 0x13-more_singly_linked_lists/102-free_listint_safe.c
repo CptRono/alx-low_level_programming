@@ -73,7 +73,6 @@ size_t free_listint_safe(listint_t **h)
 			free(*h);
 			*h = tmp;
 		}
-		count++;
 		looped = looped->next;
 		for (; *h != looped; count++)
 		{
