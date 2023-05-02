@@ -3,20 +3,17 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * print_listint_safe - prints a listint_t linked list that may have a loop.
- * @head: pointer to 1st node of the list
- *
- * Description - uses Floyd's loop detection algorithm.
- * Return: number of nodes. 98 if it fails
+ * find_loop - checks if list has a loop
+ * @head: pointer to 1st node of list
+ * Return: address of the 1st node of the loop. NULL if no loop
  */
-size_t print_listint_safe(const listint_t *head)
+
+const listint_t *find_loop(const listint_t *head)
 {
+	size_t loop_found;
 	const listint_t *fast, *slow, *tmp;
-	size_t count, loop_found;
 
 	fast = slow = tmp = head;
-	count = 0;
-	/*detect the loop if any*/
 	loop_found = 0;
 	while (fast != NULL && fast->next != NULL)
 	{
@@ -28,27 +25,63 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 		}
 	}
-	/*print tail, regardless of whther loop exists or not*/
-	/*find the begining of loop while also printing the tail*/
-	for (count = 1; tmp != slow && (tmp != NULL || slow != NULL); count++)
+	if (loop_found)
 	{
-		printf("[%p] %d\n", (void *)tmp, tmp->n);
-		tmp = tmp->next;
-		if (slow != NULL)
-			slow = slow->next;
-	}
-	if (loop_found) /*print nodes in loop if loop found*/
-	{
-		/* first print the node where tmp & slow meet */
-		printf("[%p] %d\n", (void *)tmp, tmp->n);
-		/*print the remaining part of the loop*/
-		slow = slow->next;
-		for ( ; slow != tmp; count++)
+		while (tmp != slow)
 		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
+			tmp = tmp->next;
 			slow = slow->next;
 		}
-		printf("-> [%p] %d\n", (void *)slow, slow->n);
+		return (tmp);
+	}
+	return (NULL);
+}
+
+/**
+ * print_listint_safe - prints a listint_t linked list that may have a loop.
+ * @head: pointer to 1st node of the list
+ *
+ * Description - uses Floyd's loop detection algorithm.
+ * Return: number of nodes. 98 if it fails
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	const listint_t *tmp, *looped;
+	size_t count;
+
+	if (head == NULL)
+		return (98);
+	if (head->next == NULL)
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		return (1);
+	}
+	tmp = head;
+	looped = find_loop(head); /*detect the loop if any*/
+	/*if loop not found*/
+	if (looped == NULL)
+	{
+		for (count = 1; tmp != NULL; count++)
+		{
+			printf("[%p] %d\n", (void *)tmp, tmp->n);
+			tmp = tmp->next;
+		}
+	}
+	else
+	{
+		for (count = 1; tmp != looped; count++)
+		{
+			printf("[%p] %d\n", (void *)tmp, tmp->n);
+			tmp = tmp->next;
+		}
+		printf("[%p] %d\n", (void *)tmp, tmp->n);
+		looped = looped->next;
+		for ( ; tmp != looped; count++)
+		{
+			printf("[%p] %d\n", (void *)looped, looped->n);
+			looped = looped->next;
+		}
+		printf("-> [%p] %d\n", (void *)looped, looped->n);
 	}
 	return (count);
 }
