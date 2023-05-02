@@ -50,7 +50,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count;
 
 	if (head == NULL)
-		return (98);
+		return (0);
 	if (head->next == NULL || head == head->next)
 	/* 2nd condition is where list has only 1 node referencing itself*/
 	{
