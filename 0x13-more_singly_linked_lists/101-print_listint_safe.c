@@ -57,11 +57,9 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)head, head->n);
 		return (1);
 	}
-
 	tmp = head;
 	looped = find_loop(head); /*detect the loop if any*/
-	/*if loop not found*/
-	if (looped == NULL)
+	if (looped == NULL) /*if loop not found*/
 	{
 		for (count = 0; tmp != NULL; count++)
 		{
