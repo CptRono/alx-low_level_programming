@@ -32,6 +32,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		/*traverse the list using ptr*/
 		for (count = 0; ptr != NULL && count < index; count++)
 		{
+			if (ptr->next == NULL)
+				return (-1);
 			if (count == index - 1)
 				tmp = ptr;
 			ptr = ptr->next;
