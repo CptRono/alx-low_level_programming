@@ -63,7 +63,7 @@ size_t print_listint_safe(const listint_t *head)
 	/*if loop not found*/
 	if (looped == NULL)
 	{
-		for (count = 1; tmp != NULL; count++)
+		for (count = 0; tmp != NULL; count++)
 		{
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
