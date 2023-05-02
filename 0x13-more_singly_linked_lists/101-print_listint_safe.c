@@ -68,7 +68,6 @@ size_t print_listint_safe(const listint_t *head)
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
 		}
-		return (count);
 	}
 	else
 	{
@@ -79,13 +78,14 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		printf("[%p] %d\n", (void *)tmp, tmp->n);
 		looped = looped->next;
-		for (; tmp != looped; count++)
+		for ( ; tmp != looped; count++)
 		{
 			printf("[%p] %d\n", (void *)looped, looped->n);
 			looped = looped->next;
 		}
 		printf("-> [%p] %d\n", (void *)looped, looped->n);
-		return (count);
 	}
-	return (98);
+	if (count == 0)
+		exit(98);
+	return (count);
 }
