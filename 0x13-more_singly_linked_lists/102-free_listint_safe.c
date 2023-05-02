@@ -40,7 +40,7 @@ listint_t *find_loop2(listint_t *head)
  * free_listint_safe - frees a list that may have a loop
  * @h: pointer to pointer to head node
  * Return: count of freed nodes
-*/
+ */
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *looped, *tmp;
@@ -65,7 +65,7 @@ size_t free_listint_safe(listint_t **h)
 		{
 			free(*h);
 			*h = NULL;
-			return(1);
+			return (1);
 		}
 		for (count = 1; *h != looped; count++)
 		{
@@ -74,7 +74,7 @@ size_t free_listint_safe(listint_t **h)
 			*h = tmp;
 		}
 		looped = looped->next;
-		for ( ; *h != looped; count++)
+		for (; *h != looped; count++)
 		{
 			tmp = looped->next;
 			free(looped);
