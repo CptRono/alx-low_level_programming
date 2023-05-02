@@ -52,7 +52,7 @@ size_t free_listint_safe(listint_t **h)
 	tmp = *h;
 	if (looped == NULL)
 	{
-		for (count = 0; *h != NULL; count++)
+		for (count = 1; *h != NULL; count++)
 		{
 			tmp = (*h)->next;
 			free(*h);
