@@ -15,7 +15,7 @@ const listint_t *find_loop(const listint_t *head)
 
 	fast = slow = tmp = head;
 	loop_found = 0;
-	while (fast != NULL && fast->next != NULL)
+	while (slow != NULL && fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
 		slow = slow->next;
