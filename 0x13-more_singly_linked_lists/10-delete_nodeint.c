@@ -27,16 +27,18 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		*head = (*head)->next;
 		free(ptr);
 	}
-
-	/*traverse the list using ptr*/
-	for (count = 0; ptr != NULL && count < index; count++)
+	else
 	{
-		if (count == index - 1)
-			tmp = ptr;
-		ptr = ptr->next;
-	}
+		/*traverse the list using ptr*/
+		for (count = 0; ptr != NULL && count < index; count++)
+		{
+			if (count == index - 1)
+				tmp = ptr;
+			ptr = ptr->next;
+		}
 
-	tmp->next = ptr->next;
-	free(ptr);
+		tmp->next = ptr->next;
+		free(ptr);
+	}
 	return (1);
 }
