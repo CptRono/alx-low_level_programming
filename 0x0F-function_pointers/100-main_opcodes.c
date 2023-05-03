@@ -39,7 +39,10 @@ void main(int argc, char *argv[])
 	}
 	for (count = 0; count < args; count++)
 	{
-		printf("%x ", (unsigned char)*(opcodes + count));
+		if (count == 0)
+			printf("%x ", (unsigned char)*(opcodes + count));
+		else
+			printf(" %x", (unsigned char)*(opcodes + count));
 	}
 	printf("\n");
 	exit(0);
