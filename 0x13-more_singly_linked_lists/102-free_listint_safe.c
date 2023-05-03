@@ -15,10 +15,6 @@ listint_t *find_loop2(listint_t *head)
 
 	fast = slow = tmp = head;
 	loop_found = 0;
-	if (head->next->next == head)
-	{
-		return (head->next);
-	}
 	while (fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
@@ -87,5 +83,4 @@ size_t free_listint_safe(listint_t **h)
 	}
 	*h = NULL;
 	return (count);
-	exit(98);
 }
