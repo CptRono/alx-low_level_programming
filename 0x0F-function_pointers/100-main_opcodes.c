@@ -38,3 +38,10 @@ void main(int argc, char *argv[])
 	}
 	printf("\n");
 }
+/**
+ * func_ret - returns 0
+ */
+int func_ret(void)
+{
+	return (0)
+}
