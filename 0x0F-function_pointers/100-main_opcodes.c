@@ -39,7 +39,7 @@ void main(int argc, char *argv[])
 	}
 	for (count = 0; count < args; count++)
 	{
-		printf("%02x ", (unsigned char)*(opcodes + count));
+		printf("%x ", (unsigned char)*(opcodes + count));
 	}
 	printf("\n");
 	exit(0);
