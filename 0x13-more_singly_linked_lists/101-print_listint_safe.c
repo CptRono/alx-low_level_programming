@@ -15,6 +15,11 @@ const listint_t *find_loop(const listint_t *head)
 
 	fast = slow = tmp = head;
 	loop_found = 0;
+
+	if (head->next->next == head)
+	{
+		return (head->next);
+	}
 	while (slow != NULL && fast != NULL && fast->next != NULL)
 	{
 		fast = fast->next->next;
@@ -52,16 +57,13 @@ size_t print_listint_safe(const listint_t *head)
 	if (head == NULL)
 		return (0);
 	if (head->next == NULL)
-	/* 2nd condition is where list has only 1 node referencing itself*/
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
-		return (1);
-	}
-	tmp = head;
+		return (1); }
 	looped = find_loop(head); /*detect the loop if any*/
 	if (looped == NULL)	  /*if loop not found*/
 	{
-		for (count = 0; tmp != NULL; count++)
+		for (tmp = head, count = 0; tmp != NULL; count++)
 		{
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
@@ -69,17 +71,20 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	else
 	{
-		for (count = 1; tmp != looped; count++)
+		for (tmp = head, count = 1; tmp != looped; count++)
 		{
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
 		}
 		printf("[%p] %d\n", (void *)tmp, tmp->n);
-		looped = looped->next;
-		for (; tmp != looped; count++)
+		if (count != 2)
 		{
-			printf("[%p] %d\n", (void *)looped, looped->n);
 			looped = looped->next;
+			for (; tmp != looped; count++)
+			{
+				printf("[%p] %d\n", (void *)looped, looped->n);
+				looped = looped->next;
+			}
 		}
 		printf("-> [%p] %d\n", (void *)looped, looped->n);
 	}
