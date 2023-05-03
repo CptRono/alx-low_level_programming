@@ -35,7 +35,7 @@ void main(int argc, char *argv[])
 	if (args < 0)
 	{
 		printf("Error\n");
-		exit(0);
+		exit(2);
 	}
 	for (count = 0; count < args; count++)
 	{
