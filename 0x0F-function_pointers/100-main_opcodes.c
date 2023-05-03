@@ -19,10 +19,15 @@ void main(int argc, char *argv[])
 	char *opcodes;
 	int args, count;
 
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 	main_ptr = &main;
 	opcodes = (char *)main_ptr;
 	args = atoi(argv[1]);
-	if (argc != 2 || args == 0)
+	if (args == 0)
 	{
 		printf("Error\n");
 		exit(1);
@@ -39,4 +44,3 @@ void main(int argc, char *argv[])
 	printf("\n");
 	exit(0);
 }
-
