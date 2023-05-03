@@ -51,7 +51,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		return (0);
-	if (head->next == NULL || head == head->next)
+	if (head->next == NULL)
 	/* 2nd condition is where list has only 1 node referencing itself*/
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
@@ -59,7 +59,7 @@ size_t print_listint_safe(const listint_t *head)
 	}
 	tmp = head;
 	looped = find_loop(head); /*detect the loop if any*/
-	if (looped == NULL) /*if loop not found*/
+	if (looped == NULL)	  /*if loop not found*/
 	{
 		for (count = 0; tmp != NULL; count++)
 		{
@@ -76,7 +76,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		printf("[%p] %d\n", (void *)tmp, tmp->n);
 		looped = looped->next;
-		for ( ; tmp != looped; count++)
+		for (; tmp != looped; count++)
 		{
 			printf("[%p] %d\n", (void *)looped, looped->n);
 			looped = looped->next;
