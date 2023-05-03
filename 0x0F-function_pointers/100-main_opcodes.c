@@ -37,11 +37,6 @@ void main(int argc, char *argv[])
 		printf("%02x ", (unsigned char)*(opcodes + count));
 	}
 	printf("\n");
+	exit(0);
 }
-/**
- * func_ret - returns 0
- */
-int func_ret(void)
-{
-	return (0)
-}
+
